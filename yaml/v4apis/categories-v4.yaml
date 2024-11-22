@@ -32,7 +32,7 @@ spec:
     name: "ct-ctx"
   definitionContext:
     origin: KUBERNETES
-  #   syncFrom: KUBERNEES
+    syncFrom: KUBERNETES
   listeners:
   - type: HTTP
     paths:
