@@ -15,9 +15,9 @@
 apiVersion: gravitee.io/v1alpha1
 kind: ApiV4Definition
 metadata:
-  name: ct-keyless-3
+  name: ct-keyless-v4-3
 spec:
-  name: ct-keyless-3
+  name: ct-keyless-v4-3
   type: MESSAGE
   description: "Testing with HTTP GET --> Mock"
   version: "1.0"
@@ -28,7 +28,7 @@ spec:
     name: "dev-ctx"
   definitionContext:
     origin: KUBERNETES
-    syncFrom: MANAGEMENT
+    syncFrom: KUBERNETES
   listeners:
   - type: HTTP
     paths:

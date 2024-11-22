@@ -29,7 +29,7 @@ spec:
   lifecycleState: PUBLISHED
   visibility: PUBLIC
   contextRef:
-    name: "ct-ctx"
+    name: "dev-ctx"
   definitionContext:
     origin: KUBERNETES
     syncFrom: KUBERNETES
