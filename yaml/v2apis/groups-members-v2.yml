@@ -1,0 +1,47 @@
+#
+# Copyright (C) 2015 The Gravitee team (http://gravitee.io)
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#         http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+apiVersion: gravitee.io/v1alpha1
+kind: ApiDefinition
+metadata:
+  name: ct-groups-members-v2
+spec:
+  name: "ct-groups-members-v2"
+  version: "1"
+  description: "V2 API with groups and members Gravitee Kubernetes Operator sample"
+  state: STARTED
+  contextRef:
+    name: "dev-ctx"
+  plans:
+    - name: "KEY_LESS"
+      description: "FREE"
+      security: "KEY_LESS"
+  proxy:
+    virtual_hosts:
+      - path: "/ct-groups-members-v2"
+    groups:
+      - endpoints:
+          - name: "Default"
+            target: "https://api.gravitee.io/echo"
+  local: false
+  notifyMembers: false
+  groups:
+    - ct-group1
+    - ct-group2
+  members:
+    - sourceId: christian.tschacher@graviteesource.com
+      source: google
+      displayName: Christian Tschacher
+      role: 2654a7ea-ca60-4aea-94a7-eaca606aea40  # REVIEWER
